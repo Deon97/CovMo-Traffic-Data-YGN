@@ -87,7 +87,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MoveFiles" sap:VirtualizedContainerService.HintSize="635.9999999999999,842" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MoveFiles" sap:VirtualizedContainerService.HintSize="635.9999999999999,956" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SourceFilePath" />
       <Variable x:TypeArguments="x:String" Name="DestinationFilePath" />
@@ -119,6 +119,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[DestinationFilePath]" />
     <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.csv" Folder="[SourceFilePath]" sap:VirtualizedContainerService.HintSize="450,656" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
